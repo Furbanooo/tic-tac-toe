@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
+
+body {
+  background-color: #121212;
+  color: #ffffff;
+  font-family: "Orbitron", sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  border: 2px solid #00ffcc;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #00ffcc;
+}
+
+h1 {
+  color: #00ffcc;
+  margin-bottom: 2rem;
+  text-shadow: 0 0 10px #00ffcc;
+}
+
+.score-board {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.score {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.player-x {
+  color: #00ffcc;
+}
+
+.player-o {
+  color: #ff00cc;
+}
+
+.status {
+  margin-bottom: 20px;
+  font-size: 24px;
+  text-shadow: 0 0 10px #ffffff;
+}
+
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 100px);
+  grid-gap: 10px;
+  margin: 20px auto;
+}
+
+.cell {
+  width: 100px;
+  height: 100px;
+  border: none;
+  background-color: #f5f5f5;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.cell:hover:not(:disabled) {
+  background-color: #e0e0e0;
+}
+
+.cell.X {
+  color: #e74c3c;
+}
+
+.cell.O {
+  color: #3498db;
+}
+
+/* Nouveau style pour les cases gagnantes */
+.cell.winning {
+  animation: pulse 1s ease-in-out infinite;
+  background-color: #2ecc71;
+  color: white !important;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.cell:disabled {
+  cursor: not-allowed;
+}
+
+.invalid-move {
+  animation: shake 0.5s;
+  background-color: #ffebee !important;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  75% {
+    transform: translateX(5px);
+  }
+}
+
+.controls {
+  display: flex;
+  gap: 1rem;
+}
+
+.reset-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 8rem;
+}
+
+.reset-button,
+.reset-scores-button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.reset-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #00ffcc;
+  color: #121212;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.reset-scores-button {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.reset-button:hover {
+  background-color: #ff00cc;
+  transform: scale(1.1);
+}
+
+.reset-scores-button:hover {
+  background-color: #c0392b;
+}
+
+.square {
+  width: 100px;
+  height: 100px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #1e1e1e;
+  border: 2px solid #00ffcc;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.square:hover {
+  background-color: #00ffcc;
+  transform: scale(1.1);
+}
+
+.highlight {
+  background-color: #ff00cc;
+}
