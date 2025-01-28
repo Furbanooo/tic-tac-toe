@@ -12,10 +12,6 @@ Ceci est un jeu de Tic-Tac-Toe construit avec React et Zustand pour la gestion d
 - Fonctionnalités de réinitialisation du jeu et des scores
 
 # Structure du Projet
-# Tic-Tac-Toe
-
-## Project Structure
-
 - `tic-tac-toe/`
   - `public/`
     - `index.html`
