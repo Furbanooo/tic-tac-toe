@@ -12,23 +12,27 @@ Ceci est un jeu de Tic-Tac-Toe construit avec React et Zustand pour la gestion d
 - Fonctionnalités de réinitialisation du jeu et des scores
 
 # Structure du Projet
+# Tic-Tac-Toe
 
-tic-tac-toe/
-├── public/
-│ └── index.html
-├── src/
-│ ├── components/
-│ │ ├── Board.jsx
-│ │ ├── Scoreboard.jsx
-│ │ ├── Square.jsx
-│ │ ├── Status.jsx
-│ ├── Stores/
-│ │ └── useStore.js
-│ ├── App.jsx
-│ ├── App.css
-│ ├── index.jsx
-├── package.json
-└── README.md
+## Project Structure
+
+- `tic-tac-toe/`
+  - `public/`
+    - `index.html`
+  - `src/`
+    - `components/`
+      - `Board.jsx`
+      - `Scoreboard.jsx`
+      - `Square.jsx`
+      - `Status.jsx`
+    - `Stores/`
+      - `useStore.js`
+    - `App.jsx`
+    - `App.css`
+    - `index.jsx`
+  - `package.json`
+  - `README.md`
+
 
 # Composants
 
