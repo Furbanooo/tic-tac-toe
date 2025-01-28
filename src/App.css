@@ -195,3 +195,20 @@ h1 {
 .highlight {
   background-color: #ff00cc;
 }
+
+.mode-button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #00ffcc;
+  color: #121212;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.mode-button:hover {
+  background-color: #ff00cc;
+  transform: scale(1.1);
+}

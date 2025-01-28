@@ -6,12 +6,13 @@ import useStore from "./Stores/useStore";
 import "./App.css";
 
 function App() {
-  const { scores, currentPlayer, winner, isDraw, resetScores } = useStore();
+  const { scores, currentPlayer, winner, isDraw, resetScores, mode } =
+    useStore();
 
   return (
     <div className="game-container">
       <h1>Tic Tac Toe</h1>
-      <Scoreboard scores={scores} />
+      <Scoreboard scores={scores} mode={mode} />
       <Status winner={winner} isDraw={isDraw} currentPlayer={currentPlayer} />
       <Board />
     </div>
