@@ -37,7 +37,7 @@ const useStore = create((set, get) => ({
     });
 
     if (currentPlayer === 'X' && get().mode === 'computer' && !winResult.winner && !isDraw) {
-      setTimeout(computerMove, 500);
+      setTimeout(computerMove, 1000);
     }
 
     return true;
