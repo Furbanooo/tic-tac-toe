@@ -7,9 +7,10 @@ const useStore = create((set, get) => ({
   isDraw: false,
   scores: { X: 0, O: 0 },
   winningLine: [],
+  mode: 'player',
 
   makeMove: (position) => {
-    const { board, currentPlayer, checkWinner } = get();
+    const { board, currentPlayer, checkWinner, computerMove } = get();
 
     if (board[position] || get().winner || get().isDraw) {
       return false;
@@ -35,14 +36,25 @@ const useStore = create((set, get) => ({
       scores: newScores
     });
 
+    if (currentPlayer === 'X' && get().mode === 'computer' && !winResult.winner && !isDraw) {
+      setTimeout(computerMove, 500);
+    }
+
     return true;
+  },
+
+  computerMove: () => {
+    const { board, makeMove } = get();
+    const emptySquares = board.map((value, index) => value === null ? index : null).filter(val => val !== null);
+    const randomSquare = emptySquares[Math.floor(Math.random() * emptySquares.length)];
+    makeMove(randomSquare);
   },
 
   checkWinner: (board) => {
     const winningCombinations = [
-      [0, 1, 2], [3, 4, 5], [6, 7, 8], // Rows
-      [0, 3, 6], [1, 4, 7], [2, 5, 8], // Columns
-      [0, 4, 8], [2, 4, 6]             // Diagonals
+      [0, 1, 2], [3, 4, 5], [6, 7, 8],
+      [0, 3, 6], [1, 4, 7], [2, 5, 8],
+      [0, 4, 8], [2, 4, 6]
     ];
 
     for (const combination of winningCombinations) {
@@ -75,6 +87,10 @@ const useStore = create((set, get) => ({
     set({
       scores: { X: 0, O: 0 }
     });
+  },
+
+  setMode: (mode) => {
+    set({ mode });
   }
 }));
 

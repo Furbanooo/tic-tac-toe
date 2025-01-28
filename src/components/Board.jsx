@@ -3,7 +3,15 @@ import Square from "./Square";
 import useStore from "../Stores/useStore";
 
 function Board() {
-  const { board, winningLine, makeMove, resetGame, resetScores } = useStore();
+  const {
+    board,
+    winningLine,
+    makeMove,
+    resetGame,
+    resetScores,
+    mode,
+    setMode,
+  } = useStore();
 
   const handleClick = (i) => {
     makeMove(i);
@@ -25,6 +33,12 @@ function Board() {
         </button>
         <button className="reset-button" onClick={resetScores}>
           Reset Scores
+        </button>
+        <button
+          className="mode-button"
+          onClick={() => setMode(mode === "player" ? "computer" : "player")}
+        >
+          {mode === "player" ? "Play Against Computer" : "Play Against Player"}
         </button>
       </div>
     </div>
